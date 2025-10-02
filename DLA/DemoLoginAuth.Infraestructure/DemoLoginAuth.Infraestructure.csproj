@@ -10,6 +10,7 @@
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.20" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.20">
       <PrivateAssets>all</PrivateAssets>
@@ -19,10 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DemoLoginAuth.Application\DemoLoginAuth.Application.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DataContexts\" />
+    <ProjectReference Include="..\DemoLoginAuth.Domain\DemoLoginAuth.Domain.csproj" />
   </ItemGroup>
 
 </Project>
