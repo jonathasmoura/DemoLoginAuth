@@ -55,3 +55,5 @@ nunit-*.xml
 
 .vs\DLA
 /DLA/.vs/DLA
+DLA\.vs
+/DLA/.vs/ProjectEvaluation
