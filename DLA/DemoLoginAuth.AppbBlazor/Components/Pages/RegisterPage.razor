@@ -1,0 +1,37 @@
+﻿@page "/register"
+@using NetcodeHub.Packages.Components.Validations.OnInput
+@using DemoLoginAuth.Application.DTOs
+@using DemoLoginAuth.AppbBlazor.States
+
+
+<div class="row">
+    <div class="col-lg-5">
+        <div class="alert alert-info mb-3">@Message</div>
+        <EditForm Model="RegisterModel" OnValidSubmit="RegisterAsync">
+            <DataAnnotationsValidator />
+            <FloatingText @bind-Value="RegisterModel.UserName" class="form-control mb-3" Label="Nome" Placeholder="Digite seu nome" Type="text" />
+            <FloatingText @bind-Value="RegisterModel.Email" class="form-control mb-3" Label="Email" Placeholder="Digite seu e-mail" Type="email" />
+            <FloatingText @bind-Value="RegisterModel.Password" class="form-control mb-3" Label="Senha" Placeholder="Digite sua senha" Type="password" />
+            <FloatingText @bind-Value="RegisterModel.ConfirmPassword" class="form-control mb-3" Label="Confirmar Senha" Placeholder="Digite sua senha" Type="password" />
+            <button class="btn btn-primary mb-3" type="submit">Register</button>
+            <ValidationSummary class="text-danger" />
+        </EditForm>
+    </div>
+</div>
+
+
+
+@code {
+    string? Message = string.Empty;
+    RegisterUserDto RegisterModel = new();
+    async Task RegisterAsync()
+    {
+        Message = null;
+        var result = await AccountService.RegisterUserAccountAsync(RegisterModel);
+        if (!result.Flag)        
+            NavManager.NavigateTo("login", forceLoad: true);        
+        else        
+            Message = result.Message;
+        
+    }
+}

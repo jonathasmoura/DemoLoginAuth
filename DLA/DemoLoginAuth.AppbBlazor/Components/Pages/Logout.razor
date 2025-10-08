@@ -1,0 +1,11 @@
+﻿<h3>Logout</h3>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthenticationProvider;
+        await customAuthStateProvider.UpdateAuthenticationState(null!);
+        NavManager.NavigateTo("/", forceLoad: true);
+    }
+
+}

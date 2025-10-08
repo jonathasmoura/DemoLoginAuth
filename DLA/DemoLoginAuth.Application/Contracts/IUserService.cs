@@ -10,6 +10,6 @@ namespace DemoLoginAuth.Application.Contracts
 	public interface IUserService
 	{
 		Task<RegisterResponseDto> RegisterUser(RegisterUserDto registerUserDto);
-		Task<LoginResponseDto> LoginUser(LoginUserDto registerUserDto);
+		Task<LoginResponseDto> LoginUser(LoginUserDto loginUserDto);
 	}
 }

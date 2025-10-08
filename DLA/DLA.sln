@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoLoginAuth.Infraestructu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoLoginAuth.API", "DemoLoginAuth.API\DemoLoginAuth.API.csproj", "{EEAE0C52-69AE-4045-9D93-349C09D8EB81}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorAssemblyApp", "BlazorAssemblyApp", "{FB57CC26-7EBF-404A-A8AE-54D01A042034}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoLoginAuth.AppbBlazor", "DemoLoginAuth.AppbBlazor\DemoLoginAuth.AppbBlazor.csproj", "{28799393-9999-42F4-99A3-6D74F57A76E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,10 @@ Global
 		{EEAE0C52-69AE-4045-9D93-349C09D8EB81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEAE0C52-69AE-4045-9D93-349C09D8EB81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEAE0C52-69AE-4045-9D93-349C09D8EB81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28799393-9999-42F4-99A3-6D74F57A76E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28799393-9999-42F4-99A3-6D74F57A76E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28799393-9999-42F4-99A3-6D74F57A76E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28799393-9999-42F4-99A3-6D74F57A76E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +58,7 @@ Global
 		{1DD367B3-2138-4A1D-92C0-B458670316ED} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{1F2D3F23-63C6-4A07-BFB3-5913C372BA6E} = {1A589D2E-62B1-46B3-B198-DB7F3145B640}
 		{EEAE0C52-69AE-4045-9D93-349C09D8EB81} = {10BD4D80-0A1E-494D-A996-D0A045FB7D54}
+		{28799393-9999-42F4-99A3-6D74F57A76E5} = {FB57CC26-7EBF-404A-A8AE-54D01A042034}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E438681-1F0D-42B7-94FE-C1ECD0E2B42F}

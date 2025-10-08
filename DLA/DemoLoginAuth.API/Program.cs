@@ -1,4 +1,5 @@
 using DemoLoginAuth.Infraestructure.DependencyInjection;
+using Microsoft.Net.Http.Headers;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Add services to the container.
+
+
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(swagger =>
 {
@@ -42,7 +49,6 @@ builder.Services.AddSwaggerGen(swagger =>
 	});
 });
 
-// Add services to the container.
 builder.Services.AddDIServices(builder.Configuration);
 
 var app = builder.Build();
@@ -52,10 +58,17 @@ if (app.Environment.IsDevelopment())
 {
 	app.UseSwagger();
 	app.UseSwaggerUI();
+	app.UseCors(policy =>
+	{
+		policy.WithOrigins("https://localhost:7027")
+		.AllowAnyMethod()
+		.AllowAnyHeader()
+		.WithHeaders(HeaderNames.ContentType);
+	});
 }
 
 app.UseHttpsRedirection();
-
+app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 

@@ -1,24 +1,23 @@
 ﻿using DemoLoginAuth.Application.Contracts;
 using DemoLoginAuth.Application.DTOs;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoLoginAuth.API.Controllers
-{
-	
-	[Route("api/[controller]")]
-	[ApiController]
-	public class AuthController : ControllerBase
-	{
+{	
+
+		[ApiController]
+		[Route("[controller]")]
+		public class AccountController : ControllerBase
+		{
 		private readonly IUserService _userService;
 
-		public AuthController(IUserService userService)
+		public AccountController(IUserService userService)
 		{
 			_userService = userService;
 		}
 
 		[HttpPost("register")]
-		public async Task<ActionResult<RegisterResponseDto>> RegisterUser([FromBody]RegisterUserDto registerUserDto)
+		public async Task<ActionResult<RegisterResponseDto>> RegisterUser([FromBody] RegisterUserDto registerUserDto)
 		{
 			var result = await _userService.RegisterUser(registerUserDto);
 			return Ok(result);

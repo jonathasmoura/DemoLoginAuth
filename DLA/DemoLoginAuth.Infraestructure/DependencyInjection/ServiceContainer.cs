@@ -46,8 +46,6 @@ namespace DemoLoginAuth.Infraestructure.DependencyInjection
 
 			services.AddScoped<IUserService, UserRepository>();
 
-
-
 			return services;
 		}
 
